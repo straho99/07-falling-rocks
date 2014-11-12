@@ -1,0 +1,46 @@
+UI:
+- game title in H1
+- game description in several paragraphs
+- status label / paragraph
+    - shows "Game is playing..." or "Game Over! Your score is: xxx points."
+- game board
+    - a rectangle colored with a background color
+    - in the bottom is the player represented by a square. Inside the square we have text "Me". the square has a color different than
+      background
+    - label in upper left corner showing points earned
+    - label in upper right corner showing remaining lives
+- button with text "New Game"
+- paragraph with highest score from the current session
+
+Game logic:
+- total lives: 3
+    - life is lost when a collision is detected
+        - collision = position of any rock is incidental with position of player
+- player moves left or right when a press of the left / right keyboard arrows is detected
+- game board consists of a number of X equal columns
+    - column width could be - lets say - 50px
+       - player width = 1 column
+       - rock width can vary randomly between 1 column and 3 columns
+    - one arrow press moves the player 1 column to the right or left
+- falling rocks are rectangular divs
+    - we have ten divs in the html with visibility = hidden
+    - at any moment in the game's life we can have between 1 and 5 rocks falling at the same time
+    - when the game starts we select at random one rock and show it in the game. It starts to fall. we add it to a
+    collection of currently falling rocks / divs
+    - at each time interval we check if the collection has less elements than the maximum 5
+    - if yes, we  add another rock / div
+    - at each time interval we loop through the collection and increment the top property of the rocks/divs, i.e. make the fall
+    - when their top property = board height we check for collision. if yes, reduce lives with 1. If no:
+        - change the rock/div visible / property back to hidden. Change top to 0. Reset left to a random number between 0 and board width.
+        - remove the rock / div from the collection of currently falling rocks/divs
+        - increment the points with 5 for example
+    - at each time interval check lives count. If = 0 then terminate game. Stop falling.
+        - update the status label
+        - compare result with highest score. If higher, congratulate the user
+            - update label with highest score
+- when New Game is pressed:
+    - player is centered in the board
+    - board is cleared of falling rocks
+    - points are nullified
+    - lives are reset to 3
+    - game loop is resumed

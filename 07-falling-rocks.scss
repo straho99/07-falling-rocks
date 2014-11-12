@@ -1,0 +1,112 @@
+body, div, span, a, p, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$board-width: 500px;
+$board-height: 400px;
+$player-size:50px;
+
+body {
+  background-color: ivory;
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+  h1 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: cadetblue;
+//    background-color: cadetblue;
+    width: 40%;
+    padding: 15px;
+    border-bottom: 5px solid cadetblue;
+//    border-radius: 20px;
+    margin: 20px auto;
+  }
+  p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+  }
+  h2 {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    color: tomato;
+  }
+  .container {
+    width: 73%;
+    margin: 0 auto;
+
+    .info {
+      display: inline-block;
+      width: 200px;
+      height: 30px;
+      font-size: 0.8em;
+      text-align: left;
+      margin-right: 10px;
+      float: left;
+      background-color: cadetblue;
+      border: 2px solid tomato;
+      border-radius: 10px;
+      padding: 5px;
+//      padding-top: 6px;
+      color: white;
+    }
+
+    .clearfix:after {
+      visibility: hidden;
+      display: block;
+      font-size: 0;
+      content: " ";
+      clear: both;
+      height: 0;
+    }
+    .board {
+      width: $board-width;
+      height: 400px;
+      display: inline-block;
+      background-color: lightblue;
+      margin: 0 auto;
+      margin-right: 10px;
+//      border: 2px solid tomato;
+      float: left;
+      position: relative;
+
+      .player {
+        width: 50px;
+        height: 50px;
+        background-color: indianred;
+        color: white;
+        padding-top: 15px;
+        position: relative;
+        top: $board-height - $player-size;
+        left: $board-width/2 - $player-size;
+      }
+
+      .rock {
+        width: $player-size;
+        height: $player-size;background-color: darkgreen;
+        border: 1px solid brown;
+        position: absolute;
+        visibility: hidden;
+      }
+    }
+  }
+
+
+
+  #new-game-button {
+    margin-top: 20px;
+    width: 200px;
+    height: 40px;
+    font-size: 1.2em  ;
+    border: 2px solid darkgrey;
+    color: cadetblue;
+    background-color: white;
+  }
+  #new-game-button:hover {
+    background-color: coral;
+    cursor: pointer;
+    color: white;
+  }
+}

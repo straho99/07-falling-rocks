@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Falling Rocks</title>
+    <link rel="stylesheet" href="07-falling-rocks.css"/>
+    <script src="07-falling-rocks.js"></script>
+</head>
+<body>
+    <h1>Falling Rocks</h1>
+    <p>Let's see how agile you are!</p>
+    <p>Test yourself against our treachery Mountain.</p>
+    <p >Press "New Game" and use the arrow keys to avoid the falling rocks. Each rock avoided will bring you 5 points.</p>
+    <p>Each rock that hits you will take one of your lives. Good Luck!</p>
+    <h2 id="game-status">Press "new Game" to start</h2>
+    <div class="container">
+        <div class="info round">
+            <span id="lives">
+                Lives: 3
+            </span>
+            <span id="score">
+                Score: 0 pts
+            </span>
+        </div>
+        <div class="board">
+            <div class="rock" id="rock1"></div>
+            <div class="rock" id="rock2"></div>
+            <div class="rock" id="rock3"></div>
+            <div class="rock" id="rock4"></div>
+            <div class="rock" id="rock5"></div>
+            <div class="rock" id="rock6"></div>
+            <div class="rock" id="rock7"></div>
+            <div class="rock" id="rock8"></div>
+            <div class="rock" id="rock9"></div>
+            <div class="rock" id="rock10"></div>
+
+            <div class="player" id="me">Me!</div>
+        </div>
+        <div id="highest-score" class="info">Current highest score: 0 pts</div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <input type="submit" value="New Game" id="new-game-button" onclick="gameLoop()"/>
+</body>
+</html>
